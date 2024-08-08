@@ -9,9 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       -
-        name: Login to GitLab
+        name: Login to Docker Hub
         uses: docker/login-action@v3
         with:
-          registry: registry.gitlab.com
-          username: ${{ GITLAB_USERNAME }}
-          password: ${{ secrets.GITLAB_PASSWORD }}
+          username: ${{ DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
