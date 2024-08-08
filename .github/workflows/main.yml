@@ -1,0 +1,17 @@
+name: ci
+
+on:
+  push:
+    branches: main
+
+jobs:
+  login:
+    runs-on: ubuntu-latest
+    steps:
+      -
+        name: Login to GitLab
+        uses: docker/login-action@v3
+        with:
+          registry: registry.gitlab.com
+          username: ${{ GITLAB_USERNAME }}
+          password: ${{ secrets.GITLAB_PASSWORD }}
